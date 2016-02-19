@@ -17,7 +17,7 @@ class m160219_083909_initial_structure extends Migration
         $this->createTable('tour', [
             'id' => 'INT UNSIGNED NOT NULL AUTO_INCREMENT',
             'name' => 'VARCHAR(128) NOT NULL',
-            'fieldsOrderStr' => "TEXT NOT NULL DEFAULT 'babyCount,childCount,adultCount'",
+            'fieldsOrderStr' => "TEXT",
             'PRIMARY KEY (`id`)'
         ], 'ENGINE=InnoDB');
         
@@ -32,12 +32,6 @@ class m160219_083909_initial_structure extends Migration
             'date' => 'DATE NOT NULL',
             'customFields' => 'TEXT',
             'PRIMARY KEY (`id`)'
-        ], 'ENGINE=InnoDB');
-        
-        $this->createTable('tourCustomFields', [
-            'tourId' => 'INT UNSIGNED NOT NULL',
-            'customFieldId' => 'INT UNSIGNED NOT NULL',
-            'PRIMARY KEY (`tourId`, `customFieldId`)'
         ], 'ENGINE=InnoDB');
     }
 
